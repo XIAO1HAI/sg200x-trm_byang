@@ -1,0 +1,272 @@
+特性介绍
+--------
+
+处理器内核
+~~~~~~~~~~
+
+-  主处理器 RISCV C906 @ 1.0Ghz 
+
+   -  32KB I-cache, 64KB D-Cache
+
+   -  集成矢量(Vector)及浮点运算单元 (FPU)
+
+-  主处理器 ARM Cortex-A53 @ 1.0Ghz
+
+   -  32KB I-cache, 32KB D-Cache
+
+   -  128KB L2 cache
+
+   -  支持 Neon 以及浮点运算 FPU
+
+-  协处理器 RISCV C906 @ 700Mhz
+
+   -  集成浮点运算单元 (FPU)
+
+TPU
+~~~
+
+-  内建 CVITEK TPU , 算力达到 ~0.5TOPS INT8
+
+-  支持主流的神经网络架构: Caffe，Pytorch，
+   TensorFlow(Lite)，ONNX和MXNet
+
+-  可实現行人侦测 (Pedestrian Detection) , 人脸侦测 (Face Detection) ,
+   人脸识别 (Face recognition) , 活体侦测 (Face anti-spoofing)
+   及其他视频结构化应用。
+
+视频编解码
+~~~~~~~~~~
+
+-  H.264 Baseline/Main/High profile
+
+-  H.265 Main profile
+
+-  H.264/H.265 均支援 I 帧及 P 帧
+
+-  MJPEG/JPEG baseline
+
+-  H.264编解码最大分辨率 : 2880x1620 (5M)
+
+-  H.265 编码最大分辨率 : 2880x1620 (5M)
+
+-  H.264 编解码性能
+
+   -  2880x1620@30fps+720x576@30fps
+
+   -  1920x1080@30fps 编码 + 1920x1080@30fps 解码
+
+-  H.265 编码性能
+
+   -  2880x1620@30fps+720x576@30fps
+
+-  JPEG 最大编解码性能
+
+   -  2880x1620@30fps
+
+-  支持 CBR/VBR/FIXQP 等多种码率控制模式
+
+-  支持 感兴趣区域 (ROI) 编码
+
+视频接口
+~~~~~~~~
+
+-  输入
+
+-  支持同时兩路视频输入(mipi 2L+2L + DVP or MIPI 4L)
+
+
+-  支持 MIPI, Sub-LVDS, HiSPI 等串行接口
+
+-  支持 8/10/12 bit RGB Bayer 视频输入
+
+-  支持 BT.601,BT.656,BT.1120	视频输入
+
+-  支持AHD多路混合 BT格式
+
+-  支持 SONY, OnSemi, OmniVision 等高清 CMOS sensor
+
+-  提供可编程频率输出供 sensor 作为参考时钟
+
+-  支持最大宽度为 2880 , 最大分辨率 5M (2688x1944, 2880x1620)
+
+-  输出
+
+   -  支持多种串行与并行屏显规格
+
+   -  支持 MIPI等串行接口
+
+   -  支持 支持 BT.601, BT.656, BT.1120, RGB565/666/888, 8080等并行输出接口
+
+   -  支持 SPI 输出接口
+
+ISP与图像处理
+~~~~~~~~~~~~~
+
+-  图像视频90度、180度、270度旋转
+
+-  图像视频Mirror、Flip功能
+
+-  视频2层OSD叠加
+
+-  视频1/32～32x缩放功能
+
+-  3A（AE/AWB/AF）算法
+
+-  固定模式噪声消除、坏点校正
+
+-  镜头阴影校正、镜头畸变校正、紫边校正
+
+-  方向自适应demosaic
+
+-  Gamma校正、(区域/全域)动态对比度增强、颜色管理和增强
+
+-  区域自适应去雾
+
+-  Bayer降噪、3D降噪、细节增强及锐化增强
+
+-  Local Tone mapping
+
+-  Sensor自带宽动态和2帧宽动态
+
+-  两轴数字图像防抖
+
+-  镜头畸变校正
+
+-  提供PC 端ISP tuning tools
+
+硬件加速引擎
+~~~~~~~~~~~~
+
+-  软硬体混合模式支持部分 OpenCV 库
+
+-  软硬体混合模式支持部分 IVE 库
+
+音频编解码
+~~~~~~~~~~
+
+-  集成 Audio CODEC, 支持 16 bit 音源/语音 输入和输出
+
+-  集成双声道麦克风输入
+
+-  集成双声道输出 (需要外挂功放才能推动喇叭)
+
+-  同时支持以 I2S/PCM/TDM	接口连接外部 audio	CODEC，	内建 audio	PLL	支持 MCLK	输出
+
+-  软件音频编解码协议 (G.711, G.726, ADPCM)
+
+-  软件支持音频 3A (AEC, ANR, AGC) 功能
+
+网络接口
+~~~~~~~~
+
+-  以太网模块提供1个 Ethernet MAC , 实现网路数据的接收与发送。
+
+-  Ethernet MAC 搭配内建10/100Mbps Fast Ethernet Transceiver
+   可工作在10/100Mbps 全双工或半双工模式，也可通过 RMII 外挂 PHY。
+
+安全系统模块
+~~~~~~~~~~~~
+
+-  硬件实现AES/DES/SM4多种加解密算法
+
+-  硬件实现HASH(SHA1/SHA256) 哈希算法
+
+-  硬件实现随机数发生器
+
+-  内部集成2Kbit eFuse逻辑空间
+
+智能安全运行环境
+~~~~~~~~~~~~~~~~
+
+-  支持信任链建立:
+   提供安全环境的基础，为可信环境的根本，如硬件安全设置、信任根
+
+-  支持安全启动，提供安全硬件、软件保护功能
+
+-  支持资料加密安全: 数据加密程序，运算核心加密
+
+-  支持软、固件验证流程:确认软件可信性及完整性，包括 开机及载入验证程序
+
+-  支持安全储存及传输:保护外部数据储存及交换
+
+-  支持安全更新
+
+外围接口
+~~~~~~~~
+
+-  集成POR, Power sequence
+
+-  6 个单端ADC (3 no die domain)
+
+-  6 个 I2C (1 no die domain)
+
+-  4 个SPI
+
+-  5 组 UART (1 no die domain)
+
+-  4 组(16通道) PWM
+
+-  2个SDIO接口
+
+-  一个支援 3V 连接 SD 3.0 Card(支持最大容量SDXC 2TB, 支持速度为UHS-I)
+
+-  一个支援 1.8V/3.0V 连接其他SDIO 3.0设备.(支持速度为UHS-I)
+
+-  110 GPIO 接口 (14 no die domain)
+
+-  集成 keyscan 及 Wiegand
+
+-  集成 MAC PHY 支援 10/100Mbps 全双工或半双工模式
+
+-  一个 USB Host / device 接口
+
+外部存储器接口
+~~~~~~~~~~~~~~
+
+-  内建 DRAM
+
+   -  DDR3 16bitx1, 最高速率达 1866Mbps, 容量 4Gbit (512MB)
+
+-  SPI NOR flash 接口 (1.8V / 3.0V)
+
+   -  支持 1, 2, 4 线模式
+
+   -  最大支持 256MByte
+
+-  SPI Nand flash 接口 (1.8V / 3.0V)
+
+   -  支持 1KB/2KB/4KB page (对应的最大容量 16GB/32GB/64GB)
+
+   -  使用器件本身内建的ECC模块
+
+-  eMMC 4.5 接口 (1.8V/3.0V) SD0 EMMC 共電. 因為 SD卡 default 3V, 所以有
+   SD 卡时, 不适合接 1.8V eMMC。
+
+   -  4 bit 接口
+
+   -  支持 HS200
+
+   -  最大支持容量 2TB
+
+芯片物理规格
+~~~~~~~~~~~~
+
+-  功耗
+
+   -  1080P + Video encode + AI : ~ 500mW
+
+   -  其余场景 : TBD
+
+-  工作电压
+
+   -  内核电压为 0.9V
+
+   -  IO 电压为 1.8V 及 3.0V
+
+   -  DDR 电压
+
+      -  1.35V
+
+-  封装
+
+   -  使用 LFBGA 封装, 封装尺寸为 10mmx10mmx1.3mm,管脚间距为 0.65mm,管脚总数为 205 个。
