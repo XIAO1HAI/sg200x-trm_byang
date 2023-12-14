@@ -1,0 +1,19 @@
+\babel@toc {english}{}
+\contentsline {chapter}{\numberline {1}声明 for SG2000}{3}{chapter.1}
+\contentsline {chapter}{\numberline {2}系统概述}{5}{chapter.2}
+\contentsline {section}{\numberline {2.1}介绍}{5}{section.2.1}
+\contentsline {section}{\numberline {2.2}系统框架图}{6}{section.2.2}
+\contentsline {section}{\numberline {2.3}特性介绍}{7}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}处理器内核}{7}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}TPU}{7}{subsection.2.3.2}
+\contentsline {subsection}{\numberline {2.3.3}视频编解码}{7}{subsection.2.3.3}
+\contentsline {subsection}{\numberline {2.3.4}视频接口}{8}{subsection.2.3.4}
+\contentsline {subsection}{\numberline {2.3.5}ISP与图像处理}{8}{subsection.2.3.5}
+\contentsline {subsection}{\numberline {2.3.6}硬件加速引擎}{9}{subsection.2.3.6}
+\contentsline {subsection}{\numberline {2.3.7}音频编解码}{9}{subsection.2.3.7}
+\contentsline {subsection}{\numberline {2.3.8}网络接口}{9}{subsection.2.3.8}
+\contentsline {subsection}{\numberline {2.3.9}安全系统模块}{9}{subsection.2.3.9}
+\contentsline {subsection}{\numberline {2.3.10}智能安全运行环境}{9}{subsection.2.3.10}
+\contentsline {subsection}{\numberline {2.3.11}外围接口}{10}{subsection.2.3.11}
+\contentsline {subsection}{\numberline {2.3.12}外部存储器接口}{10}{subsection.2.3.12}
+\contentsline {subsection}{\numberline {2.3.13}芯片物理规格}{11}{subsection.2.3.13}
